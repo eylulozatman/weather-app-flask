@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Weather Forecast</h1>
+    </header>
+
+    <!-- City Selection Form -->
+    <form method="POST" id="city-form">
+        <label for="city">Select City:</label>
+        <select id="city" name="city" onchange="this.form.submit()">
+            {% for city in cities %}
+            <option value="{{ city }}" {% if city == selected_city %}selected{% endif %}>{{ city }}</option>
+            {% endfor %}
+        </select>
+    </form>
+
+    <!-- Current Weather Card -->
+    <div class="current-weather card">
+        <h2>Current Weather</h2>
+        <p>Temperature: {{ current.temp_c }} °C</p>
+        <p>Condition: {{ current.condition }}</p>
+        <p>{{ current.day }}, {{ current.date }}</p>
+        <img src="https:{{ current.icon }}" alt="weather icon">
+    </div>
+
+    <!-- 7-Day Forecast -->
+    <h2 id="title3">7-Day Forecast</h2>
+    <div class="forecast-container">
+        {% for day in forecast %}
+        <div class="forecast-card">
+            <button type="button" onclick="window.location.href='{{ url_for('day_detail', date=day.date, city=adjusted_city) }}';">
+                <p><strong>{{ day.day }}</strong>, {{ day.formatted_date }}</p>
+                <p class="min-temp">Min: {{ day.mintemp_c }} °C</p>
+                <p class="max-temp">Max: {{ day.maxtemp_c }} °C</p>
+                <p class="avg-temp">Avg: {{ day.avgtemp_c }} °C</p>
+                <p>Rain Chance: {{ day.daily_chance_of_rain }}%, Snow Chance: {{ day.daily_chance_of_snow }}%</p>
+                <p>UV: {{ day.uv }}</p>
+            </button>
+            
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Footer with GitHub Link -->
+    <footer>
+        <p>Developed by <strong>Eylül Özatman</strong></p>
+        <p><a href="https://github.com/eylulozatman" target="_blank">View my GitHub</a></p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Detail</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/day-detail.css') }}">
+
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+    
+</head>
+<body>
+    <div class="header-container">
+        <div class="back-button">
+            <button type="button" onclick="window.location.href='{{ url_for('index', selected_city=city) }}';">Back</button>
+        </div>
+        
+        
+        <h1>Weather Detail for {{ day.date }}</h1>
+     
+    </div>
+    
+    
+    <div class="card-container">
+        {% for hour in day.hour %}
+        <div class="card">
+            <div class="time">{{ hour.time.split(' ')[1] }}</div>
+            <div class="temp">{{ hour.temp_c }} °C</div>
+            <div class="condition">
+                <img src="https:{{ hour.condition.icon }}" alt="{{ hour.condition.text }}">
+                {{ hour.condition.text }}
+            </div>
+            <div class="humidity">
+                <i class="fa-solid fa-droplet"></i>               
+                <span>{{ hour.humidity }}% Humidity</span>
+            </div>
+            <div class="feels-like">
+                <span>Feels Like: {{ hour.feelslike_c }} °C</span>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+
+</html>

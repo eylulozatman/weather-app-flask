@@ -1,0 +1,245 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #FFE3CC; /* Light peach background */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Header Section */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #FF8C42; /* Vibrant orange for the title */
+}
+
+/* Select Dropdown */
+select {
+    width: 150px;
+    padding: 10px;
+    font-size: 13px;
+    background-color: #FFD1A3; /* Light orange background */
+    border: 2px solid #FF8C42; /* Orange border */
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+}
+
+select:focus {
+    border-color: #FF8C42; /* Focused orange border */
+    box-shadow: 0 0 8px rgba(255, 140, 66, 0.6);
+}
+
+/* Current Weather Card */
+.current-weather {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #FFF8F2; /* Soft peach background for the card */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.current-weather h2 {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: #FF8C42; /* Match the title color */
+}
+
+.current-weather img {
+    width: 50px;
+    height: 50px;
+}
+
+#title3 {
+    margin-bottom: 30px;
+}
+
+/* Forecast Section */
+.forecast-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 40px;
+}
+
+.forecast-card {
+    padding: 20px;
+    background-color: #FFF8F2; 
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.forecast-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.forecast-card button {
+    all: unset;
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+.forecast-card p {
+    margin: 5px 0;
+}
+
+.forecast-card .temp {
+    font-size: 1.2em;
+}
+
+.forecast-card .min-temp {
+    color: #4fa3f7; /* Blue for Min temperature */
+}
+
+.forecast-card .max-temp {
+    color: #f77c7c; /* Red for Max temperature */
+}
+
+.forecast-card .avg-temp {
+    color: #f7a800; /* Orange for Avg temperature */
+}
+
+/* Arrows */
+.forecast-card .min-temp::after {
+    content: ' ↓';
+    color: #4fa3f7; /* Blue for Min temperature arrow */
+}
+
+.forecast-card .max-temp::after {
+    content: ' ↑';
+    color: #f77c7c; /* Red for Max temperature arrow */
+}
+
+.forecast-card .avg-temp::after {
+    content: ' ↔';
+    color: #f7a800; /* Orange for Avg temperature arrow */
+}
+
+/* Footer Card */
+footer {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #FFF8F2; /* Soft peach background for footer */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
+}
+
+footer:hover {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+footer a {
+    color: #FF8C42; /* Orange links */
+    text-decoration: none;
+}
+
+footer p {
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* Dropdown menüsüne scroll bar ekleme */
+.dropdown-menu {
+    max-height: 350px; /* Yüksekliği sınırlıyoruz */
+    overflow-y: auto; 
+    min-width: 100%;
+    border-radius: 8px;
+}
+
+/* Dropdown item padding */
+.dropdown-item {
+    padding: 15px;
+    font-size: 0.8em;
+    color: #333;
+}
+
+/* Hover efekti */
+.dropdown-item:hover {
+    background-color: #FF7043; /* Deep orange hover effect */
+    color: #fff;
+}
+
+
+/* Mobile Layout (Below 768px) */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    select {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .current-weather {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .forecast-container {
+        grid-template-columns: 1fr; /* Single column for small screens */
+        gap: 15px;
+    }
+
+    .forecast-card {
+        padding: 15px;
+    }
+
+    footer {
+        max-width: 100%;
+        padding: 15px;
+    }
+}
+
+/* Small Mobile Layout (Below 480px) */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .current-weather h2 {
+        font-size: 1.5em;
+    }
+
+    .forecast-card .temp {
+        font-size: 1.1em;
+    }
+
+    .forecast-card .min-temp,
+    .forecast-card .max-temp,
+    .forecast-card .avg-temp {
+        font-size: 0.9em;
+    }
+}

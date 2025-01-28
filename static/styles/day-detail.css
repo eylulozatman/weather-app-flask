@@ -1,0 +1,161 @@
+/* Genel Ayarlar */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFF8F0; /* Hafif pastel turuncu arka plan */
+    color: #4F3A3A; /* Yumuşak kahverengi metin rengi */
+}
+
+/* Başlık ve Üst Kısım */
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 24px;
+    color: #FF8C42; /* Pastel turuncu başlık rengi */
+}
+
+/* Header Container */
+.header-container {
+    margin: 0%;
+    padding: 0%;
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FF8C42; /* Vibrant orange background */
+    color: #fff; /* White text */
+}
+
+/* Back Button */
+.back-button button {
+    background-color: #4f4f4f; /* Dark gray background */
+    color: #fff; /* White text */
+    padding: 1vh;
+    border: none;
+    border-radius: 5px;
+    font-size: 3vh;
+    cursor: pointer;
+    margin-left: 1vh;
+    transition: background-color 0.3s ease;
+}
+
+.back-button button:hover {
+    background-color: #7e7e7e; /* Lighter gray on hover */
+}
+
+/* Header Title */
+.header-container h1 {
+    font-size: 5vh;
+    color: #fff; /* White text */
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Kart Konteyneri */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30vh, 1fr));
+    gap: 2vh;
+    padding: 30px;
+    justify-content: center;
+    background-color: #FFF8F0; /* Arka plan rengi */
+}
+
+/* Kartlar */
+.card {
+    background-color: #FFFFFF; /* Beyaz kart arka planı */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Hafif yükselme efekti */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card .time {
+    font-size: 18px;
+    font-weight: bold;
+    color: #4F3A3A; /* Yumuşak kahverengi */
+    margin-bottom: 10px;
+}
+
+.card .temp {
+    font-size: 3vh;
+    color: #FF6F3C; /* Pastel turuncu sıcaklık rengi */
+    margin-bottom: 10px;
+}
+
+.card .condition {
+    font-size: 2,5vh;
+    color: #4F3A3A;
+    margin-bottom: 10px;
+}
+
+.card .condition img {
+    max-width: 6vh;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.card .feels-like {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #4F3A3A;
+}
+
+.card .feels-like span {
+    font-weight: bold;
+}
+
+/* Nem (Humidity) */
+.humidity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    margin-top: 10px;
+    color: #4F3A3A;
+}
+
+.humidity i {
+    margin-right: 8px;
+    font-size: 2vh;
+    color: #FF7043; /* Turuncu nem ikonu */
+}
+
+.humidity span {
+    font-size: 2vh;
+    font-weight: bold;
+}
+
+/* Linkler */
+a {
+    display: inline-block;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 16px;
+    color: #FF7043; /* Pastel turuncu */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #FF6F3C; /* Daha koyu pastel turuncu */
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+  
+    .header-container h1{
+
+       font-size: 2vh;
+    }
+}
