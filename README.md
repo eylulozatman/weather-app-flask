@@ -1,0 +1,1 @@
+A detailed weather forecast project for the provinces of Turkey. "https://turkiyeapi.dev/" and "Weather API" were used to get weather information for the provinces of Turkey. The application was written with flask.
